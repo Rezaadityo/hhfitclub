@@ -1,0 +1,19 @@
+# Security & performance headers untuk Cloudflare Pages
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache agresif untuk assets (JS/CSS punya hash di nama file)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Jangan cache index.html
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# Jangan cache _redirects
+/_redirects
+  Cache-Control: no-cache
