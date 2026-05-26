@@ -1,7 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://playable-stubbly-snaking.ngrok-free.dev/api"
+const API = axios.create({
+  // Mengambil URL secara dinamis dari file .env saat build dijalankan
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
 });
 
 api.interceptors.request.use((config) => {
